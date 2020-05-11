@@ -8,11 +8,12 @@
 
 <script>
 import ImageTable from '../components/ImageTable'
+import DynamicImageTable from '../components/DynamicImageTable'
 import axios from 'axios'
 
 export default {
   components: {
-    "image-table": ImageTable
+    "image-table": DynamicImageTable
   },
   data() {
       return {

@@ -1,7 +1,10 @@
 <template>
   <div id='raw-api'>
     <!-- <a href="/api/random">Random</a> -->
-    <img v-bind:src="pic_url"/>
+    <el-card :body-style="{ padding: '0px'}" shadow="hover">
+        <img v-bind:src="pic_url"/>
+    </el-card>
+
     <img v-for="(item, index) of this.pic_urls" 
     :key="index"
     :src="$globals.api_url +'/' + item + '?id=' + Math.random()"/>
@@ -46,3 +49,10 @@ export default {
     
 }
 </script>
+
+<style scoped>
+.box-card {
+    width: 480px;
+  }
+
+</style>

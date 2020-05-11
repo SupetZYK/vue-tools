@@ -5,17 +5,6 @@
     <el-container>
       <el-header style="text-align: right; font-size: 12px"></el-header>
       <el-container>
-        <el-aside width="200px">
-          <el-menu router :default-active="$route.path">
-            <el-menu-item index="/">Home</el-menu-item>
-            <el-menu-item index="/table">Table</el-menu-item>
-            <el-menu-item index="/test_table">TestTable</el-menu-item>
-            <el-menu-item index="/image_table">Images</el-menu-item>
-            <el-menu-item index="/image_selection">ImageSelection</el-menu-item>
-            <el-menu-item index="/api">API</el-menu-item>
-            <el-menu-item index="/about">About</el-menu-item>
-          </el-menu>
-        </el-aside>
         <el-main>
           <keep-alive>
             <router-view v-if="$route.meta.keepAlive"></router-view>
@@ -54,10 +43,6 @@ export default {
   line-height: 60px;
 }
 
-.el-aside {
-  color: #333;
-  border-bottom: 0;
-}
 
 /* .el-container {
   border-bottom: 2px solid red;
@@ -65,7 +50,7 @@ export default {
 
 .el-main {
   position: absolute;
-  left: 200px;
+  left: 10px;
   right: 0;
   top: 75px;
   bottom: 0;

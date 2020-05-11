@@ -23,6 +23,7 @@ export default {
       if (this.table_data.length == 0){
         return []
       } else {
+        console.log('table length: ', this.table_data.length)
         return Object.keys(this.table_data[0])
       }
     },

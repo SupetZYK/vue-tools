@@ -74,9 +74,22 @@ def show_one_from_batch(idx):
         cache_timeout=0
     )
 
+@app.route('/api/list_imgs')
+def refresh_and_list_data():
+    global batch_data
+    batch_data = (np.random.rand(16,256,256,3)*255).astype(np.uint8)
+    res = []
+    for idx in range(batch_data.shape[0]):
+        # res.append('random_imgs/'+str(idx))
+        res.append({
+            'url': 'random_imgs/'+str(idx),
+            'info': 'None'
+        })
+    res = jsonify(res)
+    return res
 
 @app.route('/api/random_imgs')
-def refresh_data():
+def refresh_and_organize_data():
     global batch_data
     batch_data = (np.random.rand(16,256,256,3)*255).astype(np.uint8)
     res = []
@@ -109,6 +122,11 @@ def save_csv():
     # print(str_data)
     return 'received'
 
+@app.route('/api/selected', methods=['POST'])
+def get_selected():
+    post_data = request.get_data()
+    print(post_data)
+    return 'received'
 
 if __name__ == "__main__":
     app.run(debug=True)

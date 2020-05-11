@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 800px; width: 100%">
+  <div style="height: 600px; width: 100%">
     <pl-table 
       :datas="table_data"
       ref="plTable"
